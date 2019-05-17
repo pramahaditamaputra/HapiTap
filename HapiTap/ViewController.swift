@@ -12,11 +12,20 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    
-
     @IBOutlet var toneContainers: [AnimationView]!
     
     @IBOutlet weak var tapHereContainer: AnimationView!
+    
+    var player: AVAudioPlayer?
+    
+    var happyBirthdayNoteCounter: Int = 0
+    
+    var happyBirthdayNotes: [Int] = [
+        4,4,5,4,0,6,
+        4,4,5,4,1,0,
+        4,4,4,2,0,0,6,5,
+        3,3,2,0,1,0
+    ]
     
     var toneBackGroundColor: [UIColor] = [
         #colorLiteral(red: 0.003921568627, green: 0.7450980392, blue: 0.9960784314, alpha: 1),
@@ -47,26 +56,17 @@ class ViewController: UIViewController {
         "doo"
     ]
     
-    var happyBirthdayNotes: [Int] = [
-        4,4,5,4,0,6,
-        4,4,5,4,1,0,
-        4,4,4,2,0,0,6,5,
-        3,3,2,0,1,0
-    ]
-    
-    var happyBirthdayNoteCounter: Int = 0
-    
-    var player: AVAudioPlayer?
-    
     func playSound() {
-//        var randomToneSoundNumbers = Int.random(in: 0..<8)
         
         if happyBirthdayNoteCounter > 25    {
             
+            //Reset Song
             happyBirthdayNoteCounter = 0
             
         }else{
+            
             print(happyBirthdayNoteCounter)
+            
             guard let url = Bundle.main.url(forResource: toneSounds[happyBirthdayNotes[happyBirthdayNoteCounter]], withExtension: "wav", subdirectory: "ToneSound") else { return }
         
             do {
@@ -82,6 +82,7 @@ class ViewController: UIViewController {
                 guard let player = player else { return }
                 
                 player.play()
+                
                 happyBirthdayNoteCounter += 1
                 
             } catch let error {
@@ -104,6 +105,7 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         var randomToneBackgroundColor = Int.random(in: 0..<6)
         self.view.backgroundColor = toneBackGroundColor[randomToneBackgroundColor]
         playSound()
@@ -115,7 +117,7 @@ class ViewController: UIViewController {
         
         tapHereContainer.isHidden = true
         
-        for toneContainer in toneContainers {
+        for toneContainer in 0...9 {
             var randomToneContainer = Int.random(in: 0..<32)
             var randomToneColor = Int.random(in: 0..<6)
             toneContainers[randomToneContainer].animation = Animation.named(toneColors[randomToneColor], subdirectory: "ToneColor")
