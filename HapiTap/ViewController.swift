@@ -16,6 +16,8 @@ class ViewController: UIViewController {
 
     @IBOutlet var toneContainers: [AnimationView]!
     
+    @IBOutlet weak var tapHereContainer: AnimationView!
+    
     var toneBackGroundColor: [UIColor] = [
         #colorLiteral(red: 0.003921568627, green: 0.7450980392, blue: 0.9960784314, alpha: 1),
         #colorLiteral(red: 1, green: 0.8666666667, blue: 0, alpha: 1),
@@ -75,6 +77,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        tapHereSetAnimation()
+    }
+    
+    func tapHereSetAnimation(){
+        tapHereContainer.animation = Animation.named("tapHere")
+        tapHereContainer.loopMode = .loop
+        tapHereContainer.play()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -87,6 +96,7 @@ class ViewController: UIViewController {
     
     func setAnimation() {
         
+        tapHereContainer.isHidden = true
         
         for toneContainer in toneContainers {
             var randomToneContainer = Int.random(in: 0..<32)

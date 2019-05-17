@@ -146,11 +146,16 @@
                                 <rect key="frame" x="307" y="744" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BPH-s9-UPl" userLabel="tapHereView" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Rbv-5w-AaZ"/>
                     </view>
                     <connections>
+                        <outlet property="tapHereContainer" destination="BPH-s9-UPl" id="TgF-ng-ZSZ"/>
                         <outletCollection property="toneContainers" destination="CTj-Sq-MTd" collectionClass="NSMutableArray" id="gQ0-Cg-Z28"/>
                         <outletCollection property="toneContainers" destination="nCv-cN-NpM" collectionClass="NSMutableArray" id="UPc-C3-huH"/>
                         <outletCollection property="toneContainers" destination="Ikw-cO-72a" collectionClass="NSMutableArray" id="Wvu-YI-W0M"/>
