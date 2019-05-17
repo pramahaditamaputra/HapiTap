@@ -13,6 +13,8 @@
 		C393242E228E5072004874AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C393242C228E5072004874AE /* Main.storyboard */; };
 		C3932430228E5072004874AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C393242F228E5072004874AE /* Assets.xcassets */; };
 		C3932433228E5072004874AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3932431228E5072004874AE /* LaunchScreen.storyboard */; };
+		C393243B228E51EE004874AE /* ToneSound in Resources */ = {isa = PBXBuildFile; fileRef = C393243A228E51EE004874AE /* ToneSound */; };
+		C393243D228E51F6004874AE /* ToneColor in Resources */ = {isa = PBXBuildFile; fileRef = C393243C228E51F6004874AE /* ToneColor */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		C393242F228E5072004874AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3932432228E5072004874AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3932434228E5072004874AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C393243A228E51EE004874AE /* ToneSound */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ToneSound; path = ../../../Downloads/ToneSound; sourceTree = "<group>"; };
+		C393243C228E51F6004874AE /* ToneColor */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ToneColor; path = ../../../Downloads/ToneColor; sourceTree = "<group>"; };
 		D64632389260358FBE07C411 /* Pods-HapiTap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HapiTap.debug.xcconfig"; path = "Target Support Files/Pods-HapiTap/Pods-HapiTap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +73,8 @@
 		C3932427228E5072004874AE /* HapiTap */ = {
 			isa = PBXGroup;
 			children = (
+				C393243C228E51F6004874AE /* ToneColor */,
+				C393243A228E51EE004874AE /* ToneSound */,
 				C3932428228E5072004874AE /* AppDelegate.swift */,
 				C393242A228E5072004874AE /* ViewController.swift */,
 				C393242C228E5072004874AE /* Main.storyboard */,
@@ -85,7 +91,6 @@
 				D64632389260358FBE07C411 /* Pods-HapiTap.debug.xcconfig */,
 				35E2F6EAC94AA210A76DF859 /* Pods-HapiTap.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -149,6 +154,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C393243D228E51F6004874AE /* ToneColor in Resources */,
+				C393243B228E51EE004874AE /* ToneSound in Resources */,
 				C3932433228E5072004874AE /* LaunchScreen.storyboard in Resources */,
 				C3932430228E5072004874AE /* Assets.xcassets in Resources */,
 				C393242E228E5072004874AE /* Main.storyboard in Resources */,
