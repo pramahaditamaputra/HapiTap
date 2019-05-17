@@ -47,29 +47,46 @@ class ViewController: UIViewController {
         "doo"
     ]
     
+    var happyBirthdayNotes: [Int] = [
+        4,4,5,4,0,6,
+        4,4,5,4,1,0,
+        4,4,4,2,0,0,6,5,
+        3,3,2,0,1,0
+    ]
+    
+    var happyBirthdayNoteCounter: Int = 0
+    
     var player: AVAudioPlayer?
     
     func playSound() {
-        var randomToneSoundNumbers = Int.random(in: 0..<8)
-        guard let url = Bundle.main.url(forResource: toneSounds[randomToneSoundNumbers], withExtension: "wav", subdirectory: "ToneSound") else { return }
+//        var randomToneSoundNumbers = Int.random(in: 0..<8)
         
+        if happyBirthdayNoteCounter > 25    {
+            
+            happyBirthdayNoteCounter = 0
+            
+        }else{
+            print(happyBirthdayNoteCounter)
+            guard let url = Bundle.main.url(forResource: toneSounds[happyBirthdayNotes[happyBirthdayNoteCounter]], withExtension: "wav", subdirectory: "ToneSound") else { return }
         
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
-            
-            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
-            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
-            
-            /* iOS 10 and earlier require the following line:
-             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
-            
-            guard let player = player else { return }
-            
-            player.play()
-            
-        } catch let error {
-            print(error.localizedDescription)
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                try AVAudioSession.sharedInstance().setActive(true)
+                
+                /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+                
+                /* iOS 10 and earlier require the following line:
+                 player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+                
+                guard let player = player else { return }
+                
+                player.play()
+                happyBirthdayNoteCounter += 1
+                
+            } catch let error {
+                print(error.localizedDescription)
+            }
         }
     }
     
