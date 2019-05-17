@@ -1,0 +1,6 @@
+framework module Pods_HapiTap {
+  umbrella header "Pods-HapiTap-umbrella.h"
+
+  export *
+  module * { export * }
+}
