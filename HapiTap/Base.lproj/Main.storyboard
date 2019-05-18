@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="VDx-WV-9Ga">
             <objects>
-                <viewController id="kob-CG-xlF" customClass="ViewController" customModule="FeedMeMaster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kob-CG-xlF" customClass="ViewController" customModule="HapiTap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rEv-LH-BnK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,11 +150,23 @@
                                 <rect key="frame" x="132" y="373" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7w-4j-MCe">
+                                <rect key="frame" x="202" y="44" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JB0-gS-f1m" userLabel="MainTapContainerView" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Rbv-5w-AaZ"/>
                     </view>
                     <connections>
+                        <outlet property="mainToneContainers" destination="JB0-gS-f1m" id="6zq-Vt-Zht"/>
                         <outlet property="tapHereContainer" destination="BPH-s9-UPl" id="TgF-ng-ZSZ"/>
                         <outletCollection property="toneContainers" destination="CTj-Sq-MTd" collectionClass="NSMutableArray" id="gQ0-Cg-Z28"/>
                         <outletCollection property="toneContainers" destination="nCv-cN-NpM" collectionClass="NSMutableArray" id="UPc-C3-huH"/>
