@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kob-CG-xlF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pTf-lZ-8Dw">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,198 +11,200 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="VDx-WV-9Ga">
+        <scene sceneID="8P0-Uu-CbN">
             <objects>
-                <viewController id="kob-CG-xlF" customClass="ViewController" customModule="HapiTap" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rEv-LH-BnK">
+                <viewController id="pTf-lZ-8Dw" customClass="ViewController" customModule="HapiTap" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UCg-GD-JDn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CTj-Sq-MTd" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="raU-WN-C5q">
                                 <rect key="frame" x="7" y="44" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nCv-cN-NpM" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uU2-51-Pfr">
                                 <rect key="frame" x="107" y="44" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ikw-cO-72a" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m3C-8t-QWw">
                                 <rect key="frame" x="207" y="44" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nn7-1F-QuO" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="93O-mC-Fqj">
                                 <rect key="frame" x="307" y="44" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9O4-j1-4cV" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kO-7D-Spm">
                                 <rect key="frame" x="7" y="144" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFh-1R-ZJe" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TcD-jX-TGy">
                                 <rect key="frame" x="107" y="144" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPh-KR-1eb" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7hR-XA-563">
                                 <rect key="frame" x="207" y="144" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="flB-Ls-Yij" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0m9-Qp-QVW">
                                 <rect key="frame" x="307" y="144" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bxy-1p-H3x" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dum-a0-8gq">
                                 <rect key="frame" x="7" y="244" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F23-mS-aSx" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVW-mj-mii">
                                 <rect key="frame" x="107" y="244" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djM-B1-Hah" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NSL-gt-dRb">
                                 <rect key="frame" x="207" y="244" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Cs-Aq-6zp" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUE-Z6-Wfc">
                                 <rect key="frame" x="307" y="244" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Av6-sU-oKy" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRZ-yg-oI0">
                                 <rect key="frame" x="7" y="344" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfo-qB-ol7" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Qe-LH-mtu">
                                 <rect key="frame" x="107" y="344" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K6o-2f-oxc" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhp-e1-SjF">
                                 <rect key="frame" x="207" y="344" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gt-yQ-QcJ" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o3a-t3-38p">
                                 <rect key="frame" x="307" y="344" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5CS-1b-mun" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gZs-wr-Y6k">
                                 <rect key="frame" x="7" y="444" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rAj-SE-hXb" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJG-h4-Uzw">
                                 <rect key="frame" x="107" y="444" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qex-qI-9vQ" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAN-km-cDc">
                                 <rect key="frame" x="207" y="444" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sWN-5D-qdm" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCn-RL-E1g">
                                 <rect key="frame" x="307" y="444" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7K-0O-aQ1" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xiX-8o-Ypb">
                                 <rect key="frame" x="7" y="544" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AHX-gk-p69" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efR-dH-VfX">
                                 <rect key="frame" x="107" y="544" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dzv-Tq-VBf" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Soi-iu-2nT">
                                 <rect key="frame" x="207" y="544" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rs8-L2-SNf" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4v-sV-tFk">
                                 <rect key="frame" x="307" y="544" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ASh-Vq-VjU" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AdS-pc-a83">
                                 <rect key="frame" x="7" y="644" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hVY-pa-wiX" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mf5-Zb-7fY">
                                 <rect key="frame" x="107" y="644" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B0h-uE-cuZ" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eko-sl-Yfu">
                                 <rect key="frame" x="207" y="644" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PWb-Tl-syU" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zCy-oL-P3R">
                                 <rect key="frame" x="307" y="644" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AgL-cU-8Ma" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qnW-8N-w0M">
                                 <rect key="frame" x="7" y="744" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="naf-2Y-7qg" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iM5-h3-oNI">
                                 <rect key="frame" x="107" y="744" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rcv-qo-Snz" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxL-gO-Nsq">
                                 <rect key="frame" x="207" y="744" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="deg-dn-bWd" customClass="AnimationView" customModule="Lottie">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0mM-Si-v6G">
                                 <rect key="frame" x="307" y="744" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BPH-s9-UPl" userLabel="tapHereView" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DON'T TAP THE CIRCLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KL-uf-wDa">
+                                <rect key="frame" x="108" y="469" width="198" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7w-4j-MCe">
-                                <rect key="frame" x="202" y="44" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JB0-gS-f1m" userLabel="MainTapContainerView" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QRJ-FU-Opt" userLabel="MainTapContainerView">
+                                <rect key="frame" x="157" y="398" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Omx-DV-MaZ">
+                                <rect key="frame" x="182" y="423" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.56078431370000004" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Rbv-5w-AaZ"/>
+                        <viewLayoutGuide key="safeArea" id="P7t-W2-WH9"/>
                     </view>
                     <connections>
-                        <outlet property="mainToneContainers" destination="JB0-gS-f1m" id="6zq-Vt-Zht"/>
-                        <outlet property="tapHereContainer" destination="BPH-s9-UPl" id="TgF-ng-ZSZ"/>
-                        <outletCollection property="toneContainers" destination="CTj-Sq-MTd" collectionClass="NSMutableArray" id="gQ0-Cg-Z28"/>
-                        <outletCollection property="toneContainers" destination="nCv-cN-NpM" collectionClass="NSMutableArray" id="UPc-C3-huH"/>
-                        <outletCollection property="toneContainers" destination="Ikw-cO-72a" collectionClass="NSMutableArray" id="Wvu-YI-W0M"/>
-                        <outletCollection property="toneContainers" destination="Nn7-1F-QuO" collectionClass="NSMutableArray" id="ueI-xz-WZ2"/>
-                        <outletCollection property="toneContainers" destination="9O4-j1-4cV" collectionClass="NSMutableArray" id="PKA-IA-xPE"/>
-                        <outletCollection property="toneContainers" destination="gFh-1R-ZJe" collectionClass="NSMutableArray" id="3vk-0h-LGf"/>
-                        <outletCollection property="toneContainers" destination="WPh-KR-1eb" collectionClass="NSMutableArray" id="hfK-5d-5lC"/>
-                        <outletCollection property="toneContainers" destination="flB-Ls-Yij" collectionClass="NSMutableArray" id="0cm-Et-Fxx"/>
-                        <outletCollection property="toneContainers" destination="Bxy-1p-H3x" collectionClass="NSMutableArray" id="RyI-Mt-siB"/>
-                        <outletCollection property="toneContainers" destination="F23-mS-aSx" collectionClass="NSMutableArray" id="fJx-ue-Pcn"/>
-                        <outletCollection property="toneContainers" destination="djM-B1-Hah" collectionClass="NSMutableArray" id="seo-Qe-LzL"/>
-                        <outletCollection property="toneContainers" destination="4Cs-Aq-6zp" collectionClass="NSMutableArray" id="Xun-1u-Aud"/>
-                        <outletCollection property="toneContainers" destination="Av6-sU-oKy" collectionClass="NSMutableArray" id="MI3-cA-Mhh"/>
-                        <outletCollection property="toneContainers" destination="zfo-qB-ol7" collectionClass="NSMutableArray" id="V4f-op-mcA"/>
-                        <outletCollection property="toneContainers" destination="K6o-2f-oxc" collectionClass="NSMutableArray" id="2a8-iW-hgQ"/>
-                        <outletCollection property="toneContainers" destination="6gt-yQ-QcJ" collectionClass="NSMutableArray" id="xza-Um-0jg"/>
-                        <outletCollection property="toneContainers" destination="5CS-1b-mun" collectionClass="NSMutableArray" id="Voe-Mm-8GU"/>
-                        <outletCollection property="toneContainers" destination="rAj-SE-hXb" collectionClass="NSMutableArray" id="TgG-yt-I9v"/>
-                        <outletCollection property="toneContainers" destination="Qex-qI-9vQ" collectionClass="NSMutableArray" id="E0Y-As-FlY"/>
-                        <outletCollection property="toneContainers" destination="sWN-5D-qdm" collectionClass="NSMutableArray" id="AIe-6S-kP8"/>
-                        <outletCollection property="toneContainers" destination="q7K-0O-aQ1" collectionClass="NSMutableArray" id="Y8t-qV-Prr"/>
-                        <outletCollection property="toneContainers" destination="AHX-gk-p69" collectionClass="NSMutableArray" id="XYA-py-Ozu"/>
-                        <outletCollection property="toneContainers" destination="dzv-Tq-VBf" collectionClass="NSMutableArray" id="8Lt-hQ-XtC"/>
-                        <outletCollection property="toneContainers" destination="Rs8-L2-SNf" collectionClass="NSMutableArray" id="AK6-vt-Y5Z"/>
-                        <outletCollection property="toneContainers" destination="ASh-Vq-VjU" collectionClass="NSMutableArray" id="iWv-zO-riJ"/>
-                        <outletCollection property="toneContainers" destination="hVY-pa-wiX" collectionClass="NSMutableArray" id="O0i-GG-4Su"/>
-                        <outletCollection property="toneContainers" destination="B0h-uE-cuZ" collectionClass="NSMutableArray" id="SAt-b8-qZf"/>
-                        <outletCollection property="toneContainers" destination="PWb-Tl-syU" collectionClass="NSMutableArray" id="qRt-ln-ZyY"/>
-                        <outletCollection property="toneContainers" destination="AgL-cU-8Ma" collectionClass="NSMutableArray" id="iu1-1b-uoJ"/>
-                        <outletCollection property="toneContainers" destination="naf-2Y-7qg" collectionClass="NSMutableArray" id="PHA-rD-jtA"/>
-                        <outletCollection property="toneContainers" destination="Rcv-qo-Snz" collectionClass="NSMutableArray" id="Pdd-nE-dTs"/>
-                        <outletCollection property="toneContainers" destination="deg-dn-bWd" collectionClass="NSMutableArray" id="c3L-T1-7Vl"/>
+                        <outlet property="mainToneContainers" destination="QRJ-FU-Opt" id="7NK-8K-Q7f"/>
+                        <outlet property="startContainer" destination="Omx-DV-MaZ" id="Shg-O0-d69"/>
+                        <outlet property="startTapLabel" destination="0KL-uf-wDa" id="qtk-gm-8An"/>
+                        <outletCollection property="toneContainers" destination="raU-WN-C5q" collectionClass="NSMutableArray" id="Rh2-EA-ASs"/>
+                        <outletCollection property="toneContainers" destination="uU2-51-Pfr" collectionClass="NSMutableArray" id="8yW-fq-iXW"/>
+                        <outletCollection property="toneContainers" destination="m3C-8t-QWw" collectionClass="NSMutableArray" id="Bb1-79-0Gy"/>
+                        <outletCollection property="toneContainers" destination="93O-mC-Fqj" collectionClass="NSMutableArray" id="5GN-ev-zao"/>
+                        <outletCollection property="toneContainers" destination="9kO-7D-Spm" collectionClass="NSMutableArray" id="Nhc-eG-GqH"/>
+                        <outletCollection property="toneContainers" destination="TcD-jX-TGy" collectionClass="NSMutableArray" id="4uo-OR-Ual"/>
+                        <outletCollection property="toneContainers" destination="7hR-XA-563" collectionClass="NSMutableArray" id="Yan-Ee-F2B"/>
+                        <outletCollection property="toneContainers" destination="0m9-Qp-QVW" collectionClass="NSMutableArray" id="dYa-Gg-Cnb"/>
+                        <outletCollection property="toneContainers" destination="dum-a0-8gq" collectionClass="NSMutableArray" id="820-3W-d6t"/>
+                        <outletCollection property="toneContainers" destination="ZVW-mj-mii" collectionClass="NSMutableArray" id="wbJ-kU-YMo"/>
+                        <outletCollection property="toneContainers" destination="NSL-gt-dRb" collectionClass="NSMutableArray" id="pxr-pY-tKT"/>
+                        <outletCollection property="toneContainers" destination="pUE-Z6-Wfc" collectionClass="NSMutableArray" id="Bd2-4O-zJa"/>
+                        <outletCollection property="toneContainers" destination="ZRZ-yg-oI0" collectionClass="NSMutableArray" id="xJe-Jd-7Fu"/>
+                        <outletCollection property="toneContainers" destination="0Qe-LH-mtu" collectionClass="NSMutableArray" id="ssc-S1-oxv"/>
+                        <outletCollection property="toneContainers" destination="nhp-e1-SjF" collectionClass="NSMutableArray" id="hgc-p5-FjZ"/>
+                        <outletCollection property="toneContainers" destination="o3a-t3-38p" collectionClass="NSMutableArray" id="iZG-oj-wEP"/>
+                        <outletCollection property="toneContainers" destination="gZs-wr-Y6k" collectionClass="NSMutableArray" id="h8S-2O-BOj"/>
+                        <outletCollection property="toneContainers" destination="FJG-h4-Uzw" collectionClass="NSMutableArray" id="yvF-Sd-zpS"/>
+                        <outletCollection property="toneContainers" destination="aAN-km-cDc" collectionClass="NSMutableArray" id="mml-fT-24v"/>
+                        <outletCollection property="toneContainers" destination="YCn-RL-E1g" collectionClass="NSMutableArray" id="981-Du-JdR"/>
+                        <outletCollection property="toneContainers" destination="xiX-8o-Ypb" collectionClass="NSMutableArray" id="cIH-db-g5K"/>
+                        <outletCollection property="toneContainers" destination="efR-dH-VfX" collectionClass="NSMutableArray" id="pPA-0F-bD6"/>
+                        <outletCollection property="toneContainers" destination="Soi-iu-2nT" collectionClass="NSMutableArray" id="pwr-3M-WfG"/>
+                        <outletCollection property="toneContainers" destination="v4v-sV-tFk" collectionClass="NSMutableArray" id="od2-eo-NJd"/>
+                        <outletCollection property="toneContainers" destination="AdS-pc-a83" collectionClass="NSMutableArray" id="pFI-a5-CGg"/>
+                        <outletCollection property="toneContainers" destination="Mf5-Zb-7fY" collectionClass="NSMutableArray" id="4Vz-sv-BCk"/>
+                        <outletCollection property="toneContainers" destination="Eko-sl-Yfu" collectionClass="NSMutableArray" id="3F5-9x-t1w"/>
+                        <outletCollection property="toneContainers" destination="zCy-oL-P3R" collectionClass="NSMutableArray" id="EIP-Ch-ZY1"/>
+                        <outletCollection property="toneContainers" destination="qnW-8N-w0M" collectionClass="NSMutableArray" id="ymm-ja-DcZ"/>
+                        <outletCollection property="toneContainers" destination="iM5-h3-oNI" collectionClass="NSMutableArray" id="1D0-EQ-NN9"/>
+                        <outletCollection property="toneContainers" destination="FxL-gO-Nsq" collectionClass="NSMutableArray" id="uCJ-tF-5nE"/>
+                        <outletCollection property="toneContainers" destination="0mM-Si-v6G" collectionClass="NSMutableArray" id="QV4-lw-2no"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vZb-uE-mQ2" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqT-pD-eap" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>

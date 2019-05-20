@@ -7,57 +7,28 @@
 //
 
 import UIKit
-import Lottie
 import AVFoundation
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var mainToneContainers: AnimationView!
-    @IBOutlet var toneContainers: [AnimationView]!
-    
-    @IBOutlet weak var tapHereContainer: AnimationView!
-    
     var player: AVAudioPlayer?
-
-    var happyBirthdayNoteCounter: Int = 0
-    var tapColorCounter: Int = 0
-    var tapSparkleCounter: Int = 0
     
-    var happyBirthdayNotes: [Int] = [
-        4,4,5,4,0,6,
-        4,4,5,4,1,0,
-        4,4,4,2,0,0,6,5,
-        3,3,2,0,1,0
-    ]
+    var counterTouch = 0
     
-    var toneBackGroundColor: [UIColor] = [
+    var toneBackGroundColor: [CGColor] = [
         #colorLiteral(red: 0.003921568627, green: 0.7450980392, blue: 0.9960784314, alpha: 1),
         #colorLiteral(red: 1, green: 0.8666666667, blue: 0, alpha: 1),
         #colorLiteral(red: 1, green: 0.4901960784, blue: 0, alpha: 1),
-        #colorLiteral(red: 1, green: 0, blue: 0.4274509804, alpha: 1),
+        #colorLiteral(red: 0.5607843137, green: 0, blue: 1, alpha: 1),
         #colorLiteral(red: 0.6784313725, green: 1, blue: 0.007843137255, alpha: 1),
-        #colorLiteral(red: 0.5607843137, green: 0, blue: 1, alpha: 1)
     ]
     
-    var toneColors: [String] = [
-        "biru",
-        "hijau",
-        "kuning",
-        "oren",
-        "pink",
-        "ungu",
-        "sparkleHappy"
-    ]
-    
-    var toneSounds: [String] = [
-        "do",
-        "re",
-        "mi",
-        "fa",
-        "sol",
-        "la",
-        "si",
-        "doo"
+    var toneViewBackgroundColor: [CGColor] = [
+        #colorLiteral(red: 0.3294117647, green: 1, blue: 0.9843137255, alpha: 1),
+        #colorLiteral(red: 1, green: 0.9176470588, blue: 0.4235294118, alpha: 1),
+        #colorLiteral(red: 1, green: 0.6039215686, blue: 0.3333333333, alpha: 1),
+        #colorLiteral(red: 0.9058823529, green: 0.6980392157, blue: 1, alpha: 1),
+        #colorLiteral(red: 0.537254902, green: 1, blue: 0.8, alpha: 1),
     ]
     
     var tapToneSounds: [String] = [
@@ -89,110 +60,147 @@ class ViewController: UIViewController {
         "zig-zag"
     ]
     
-    func playSound() {
-        
-//        if happyBirthdayNoteCounter > 25    {
-        
-            //Reset Song
-//            happyBirthdayNoteCounter = 0
-            
-//        }else{
-            
-//            print(happyBirthdayNoteCounter)
-        
-        var randomTapToneSoundNumber: Int = Int.random(in: 0...25)
-        
-            guard let url = Bundle.main.url(forResource: tapToneSounds[randomTapToneSoundNumber], withExtension: "mp3", subdirectory: "TapToneSound") else { return }
-        
-            do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
-                
-                /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
-                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
-                
-                /* iOS 10 and earlier require the following line:
-                 player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
-                
-                guard let player = player else { return }
-                
-                player.play()
-                
-//                happyBirthdayNoteCounter += 1
-                
-            } catch let error {
-                print(error.localizedDescription)
-            }
-//        }
+    
+    
+    
+    @IBOutlet weak var mainToneContainers: UIView!
+    @IBOutlet var toneContainers: [UIView]!
+    @IBOutlet weak var startContainer: UIView!
+    @IBOutlet weak var startTapLabel: UILabel!
+    
+    override var prefersStatusBarHidden: Bool{
+        return true
     }
     
+    func startGameAnimation() {
+        let randomColor1 = Int.random(in: 0...4)
+        UIView.animate(withDuration: 0.5, delay: 0, animations: {
+            self.startContainer.transform = CGAffineTransform(scaleX: CGFloat(1), y: CGFloat(1))
+        }) { (_) in
+            UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
+                self.startContainer.layer.backgroundColor = self.toneBackGroundColor[randomColor1]
+                let positionView = self.startContainer.center
+                let pulse = PulseAnimation(numberOfPulses: 5, radius: CGFloat(100), position: positionView)
+                pulse.backgroundColor = self.toneBackGroundColor[randomColor1]
+                pulse.animationDuration = 0.2
+                self.view.layer.insertSublayer(pulse, below: self.startContainer.layer)
+            })
+        }
+    }
+    
+    func setBeginingShapeState() {
+        // Do any additional setup after loading the view.
+        mainToneContainers.layer.opacity = 0
+        mainToneContainers.layer.cornerRadius = mainToneContainers.frame.width/2
+        startContainer.layer.cornerRadius = startContainer.frame.width/2
+        for toneContainer in toneContainers {
+            toneContainer.layer.opacity = 0
+            toneContainer.layer.cornerRadius = toneContainer.frame.width/2
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        tapHereSetAnimation()
+        setBeginingShapeState()
+        startGameAnimation()
     }
     
-    func tapHereSetAnimation(){
-        tapHereContainer.animation = Animation.named("tapHere")
-        tapHereContainer.loopMode = .loop
-        tapHereContainer.play()
+    func toneContainersAnimation(_ randomCircle: Int, _ randomScale2: Int, _ randomColor2: Int, _ randomRadius2: Int) {
+        UIView.animate(withDuration: 0.5, delay: 0, animations: {
+            self.toneContainers[randomCircle].transform = CGAffineTransform(scaleX: CGFloat(randomScale2), y: CGFloat(randomScale2))
+            self.toneContainers[randomCircle].layer.opacity = 1
+        }) { (_) in
+            UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
+                self.toneContainers[randomCircle].layer.backgroundColor = self.toneBackGroundColor[randomColor2]
+                let positionView = self.toneContainers[randomCircle].center
+                let pulse = PulseAnimation(numberOfPulses: 1, radius: CGFloat(randomRadius2), position: positionView)
+                pulse.backgroundColor = self.toneBackGroundColor[randomColor2]
+                pulse.animationDuration = 1
+                self.view.layer.insertSublayer(pulse, below: self.toneContainers[randomCircle].layer)
+                self.toneContainers[randomCircle].transform = .identity
+                self.toneContainers[randomCircle].layer.opacity = 0
+            })
+        }
+    }
+    
+    func mainToneContainersAnimation(_ position: CGPoint, _ randomScale1: Int, _ randomColor1: Int, _ randomRadius1: Int) {
+        UIView.animate(withDuration: 0.5, delay: 0, animations: {
+            
+            print(self.counterTouch)
+            
+            if self.counterTouch <= 5 {
+                self.view.layer.backgroundColor = self.toneViewBackgroundColor[0]
+            }else if self.counterTouch > 5 && self.counterTouch <= 10 {
+                self.view.layer.backgroundColor = self.toneViewBackgroundColor[1]
+            }else if self.counterTouch > 10 && self.counterTouch <= 15 {
+                self.view.layer.backgroundColor = self.toneViewBackgroundColor[2]
+            }else if self.counterTouch > 15 && self.counterTouch <= 20 {
+                self.view.layer.backgroundColor = self.toneViewBackgroundColor[3]
+            }else if self.counterTouch > 20 && self.counterTouch <= 25 {
+                self.view.layer.backgroundColor = self.toneViewBackgroundColor[4]
+            }else if self.counterTouch > 25 && self.counterTouch <= 30 {
+                self.counterTouch = 0
+            }
+            
+            self.startContainer.isHidden = true
+            self.startTapLabel.isHidden = true
+            self.mainToneContainers.center = CGPoint(x: CGFloat(position.x), y: CGFloat(position.y))
+            self.mainToneContainers.transform = CGAffineTransform(scaleX: CGFloat(randomScale1), y: CGFloat(randomScale1))
+            self.mainToneContainers.layer.opacity = 1
+        }) { (_) in
+            UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
+                self.mainToneContainers.layer.backgroundColor = self.toneBackGroundColor[randomColor1]
+                let positionView = self.mainToneContainers.center
+                let pulse = PulseAnimation(numberOfPulses: 1, radius: CGFloat(randomRadius1), position: positionView)
+                pulse.backgroundColor = self.toneBackGroundColor[randomColor1]
+                pulse.animationDuration = 1
+                self.view.layer.insertSublayer(pulse, below: self.mainToneContainers.layer)
+                self.mainToneContainers.transform = .identity
+                self.mainToneContainers.layer.opacity = 0
+            })
+        }
+    }
+    
+    func playSound() {
+        var randomTapToneSoundNumber: Int = Int.random(in: 0...25)
+        
+        guard let url = Bundle.main.url(forResource: tapToneSounds[randomTapToneSoundNumber], withExtension: "mp3", subdirectory: "B") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            
+            /* iOS 10 and earlier require the following line:
+             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        tapColorCounter += 1
-        var randomScale: Int = Int.random(in: 1...10)
-        var randomMainTapToneContainer: Int = Int.random(in: 0..<6)
-        
+        playSound()
+        counterTouch += 1
+        let randomScale1 = Int.random(in: 1...5)
+        let randomRadius1 = Int.random(in: 250...300)
+        let randomScale2 = Int.random(in: 1...2)
+        let randomRadius2 = Int.random(in: 150...200)
+        let randomColor1 = Int.random(in: 0...4)
+        let randomColor2 = Int.random(in: 0...4)
+        let randomCircle = Int.random(in: 0...31)
         if let touch = touches.first {
             let position = touch.location(in: view)
-            UIView.animate(withDuration: 0.1) {
-                if self.tapColorCounter < 10 {
-                    self.mainToneContainers.animation = Animation.named(self.toneColors[randomMainTapToneContainer], subdirectory: "ToneColor")
-                }else{
-                    self.tapSparkleCounter += 1
-                    self.mainToneContainers.animation = Animation.named(self.toneColors[6], subdirectory: "ToneColor")
-                    
-                    if self.tapSparkleCounter > 10 {
-                        self.tapColorCounter = 0
-                        self.tapSparkleCounter = 0
-                    }
-                }
-                self.mainToneContainers.center = CGPoint(x: position.x, y: position.y)
-                self.mainToneContainers.transform = CGAffineTransform(scaleX: CGFloat(randomScale), y: CGFloat(randomScale))
-                self.mainToneContainers.play()
-            }
+            mainToneContainersAnimation(position, randomScale1, randomColor1, randomRadius1)
+            toneContainersAnimation(randomCircle, randomScale2, randomColor2, randomRadius2)
         }
-        
-        playSound()
-        setAnimation()
     }
-    
-    
-    func setAnimation() {
-        
-        tapHereContainer.isHidden = true
-        
-//        for toneContainer in 0...1 {
-            var randomToneBackgroundColor = Int.random(in: 0..<6)
-            var randomToneContainer = Int.random(in: 0..<32)
-            var randomToneColor = Int.random(in: 0..<6)
-            var randomSizeX = Int.random(in: 1...3)
-            var randomSizeY = Int.random(in: 1...3)
-
-            UIView.animate(withDuration: 0.1, animations: {
-//                self.view.backgroundColor = self.toneBackGroundColor[randomToneBackgroundColor]
-                if self.tapColorCounter < 10 {
-                    self.toneContainers[randomToneContainer].animation = Animation.named(self.toneColors[randomToneColor], subdirectory: "ToneColor")
-                }else{
-                    self.toneContainers[randomToneContainer].animation = Animation.named(self.toneColors[6], subdirectory: "ToneColor")
-                }
-                self.toneContainers[randomToneContainer].transform = CGAffineTransform(scaleX: CGFloat(randomSizeX), y: CGFloat(randomSizeX))
-                self.toneContainers[randomToneContainer].play()
-            })
-//        }
-        
-    }
-    
 }
 

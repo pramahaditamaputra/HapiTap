@@ -17,6 +17,8 @@
 		C393243B228E51EE004874AE /* ToneSound in Resources */ = {isa = PBXBuildFile; fileRef = C393243A228E51EE004874AE /* ToneSound */; };
 		C393243D228E51F6004874AE /* ToneColor in Resources */ = {isa = PBXBuildFile; fileRef = C393243C228E51F6004874AE /* ToneColor */; };
 		C393243F228E53B7004874AE /* tapHere.json in Resources */ = {isa = PBXBuildFile; fileRef = C393243E228E53B7004874AE /* tapHere.json */; };
+		C3A338002292D897002173E9 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A337FF2292D897002173E9 /* PulseAnimation.swift */; };
+		C3A338022292D90F002173E9 /* B in Resources */ = {isa = PBXBuildFile; fileRef = C3A338012292D90F002173E9 /* B */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		C393243A228E51EE004874AE /* ToneSound */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ToneSound; path = ../../../Downloads/ToneSound; sourceTree = "<group>"; };
 		C393243C228E51F6004874AE /* ToneColor */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ToneColor; path = ../../../Downloads/ToneColor; sourceTree = "<group>"; };
 		C393243E228E53B7004874AE /* tapHere.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = tapHere.json; path = ../../../Downloads/tapHere.json; sourceTree = "<group>"; };
+		C3A337FF2292D897002173E9 /* PulseAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
+		C3A338012292D90F002173E9 /* B */ = {isa = PBXFileReference; lastKnownFileType = folder; name = B; path = ../../B; sourceTree = "<group>"; };
 		D64632389260358FBE07C411 /* Pods-HapiTap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HapiTap.debug.xcconfig"; path = "Target Support Files/Pods-HapiTap/Pods-HapiTap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +81,7 @@
 		C3932427228E5072004874AE /* HapiTap */ = {
 			isa = PBXGroup;
 			children = (
+				C3A338012292D90F002173E9 /* B */,
 				C3061C18228F627A0021E187 /* TapToneSound */,
 				C393243C228E51F6004874AE /* ToneColor */,
 				C393243A228E51EE004874AE /* ToneSound */,
@@ -87,6 +92,7 @@
 				C393243E228E53B7004874AE /* tapHere.json */,
 				C3932431228E5072004874AE /* LaunchScreen.storyboard */,
 				C3932434228E5072004874AE /* Info.plist */,
+				C3A337FF2292D897002173E9 /* PulseAnimation.swift */,
 			);
 			path = HapiTap;
 			sourceTree = "<group>";
@@ -161,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3061C19228F627A0021E187 /* TapToneSound in Resources */,
+				C3A338022292D90F002173E9 /* B in Resources */,
 				C393243D228E51F6004874AE /* ToneColor in Resources */,
 				C393243F228E53B7004874AE /* tapHere.json in Resources */,
 				C393243B228E51EE004874AE /* ToneSound in Resources */,
@@ -225,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C393242B228E5072004874AE /* ViewController.swift in Sources */,
+				C3A338002292D897002173E9 /* PulseAnimation.swift in Sources */,
 				C3932429228E5072004874AE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
