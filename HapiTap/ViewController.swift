@@ -147,20 +147,20 @@ class ViewController: UIViewController {
     func mainToneContainersAnimation(_ position: CGPoint, _ randomScale1: Int, _ randomColor1: Int, _ randomRadius1: Int) {
         UIView.animate(withDuration: 0.5, delay: 0, animations: {
             
-            print(self.counterTouch)
             
-            if self.counterTouch <= 5 {
+            
+            if self.counterTouch >= 0 && self.counterTouch <= 6 {
                 self.view.layer.backgroundColor = self.toneViewBackgroundColor[0]
-            }else if self.counterTouch > 5 && self.counterTouch <= 10 {
+            }else if self.counterTouch > 6 && self.counterTouch <= 13 {
                 self.view.layer.backgroundColor = self.toneViewBackgroundColor[1]
-            }else if self.counterTouch > 10 && self.counterTouch <= 15 {
+            }else if self.counterTouch > 13 && self.counterTouch <= 20 {
                 self.view.layer.backgroundColor = self.toneViewBackgroundColor[2]
-            }else if self.counterTouch > 15 && self.counterTouch <= 20 {
+            }else if self.counterTouch > 20 && self.counterTouch <= 27 {
                 self.view.layer.backgroundColor = self.toneViewBackgroundColor[3]
-            }else if self.counterTouch > 20 && self.counterTouch <= 25 {
+            }else if self.counterTouch > 27 && self.counterTouch <= 34 {
                 self.view.layer.backgroundColor = self.toneViewBackgroundColor[4]
-            }else if self.counterTouch > 25 && self.counterTouch <= 30 {
-                self.counterTouch = 0
+            }else if self.counterTouch > 34 && self.counterTouch <= 41 {
+                self.view.layer.backgroundColor = self.toneViewBackgroundColor[1]
             }
             
             self.startContainer.isHidden = true
@@ -186,12 +186,12 @@ class ViewController: UIViewController {
 //        var randomTapToneSoundNumber: Int = Int.random(in: 0...25)
 //        print(notTwinkleLittleStar.count)
         
-        if counterNot < 42 {
-            
-            
-            
+        if counterNot <= 41 {
+        
             guard let url = Bundle.main.url(forResource: toneNotasiAngka[notTwinkleLittleStar[counterNot]], withExtension: "wav", subdirectory: "ToneSound") else { return }
-            
+        
+//        guard let url = Bundle.main.url(forResource: tapToneSounds[randomTapToneSoundNumber], withExtension: "mp3", subdirectory: "A") else { return }
+        
             do {
                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
                 try AVAudioSession.sharedInstance().setActive(true)
@@ -212,18 +212,21 @@ class ViewController: UIViewController {
             }
             
             counterNot+=1
-        }else{
+            counterTouch += 1
+        }else if counterNot > 41{
             counterNot = 0
+            counterTouch = 0
         }
         
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        print(self.counterTouch)
+        print(self.counterNot)
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         playSound()
-        counterTouch += 1
         let randomScale1 = Int.random(in: 1...5)
         let randomRadius1 = Int.random(in: 250...300)
         let randomScale2 = Int.random(in: 1...2)
