@@ -16,7 +16,6 @@ class PulseAnimation: CALayer {
     var radius: CGFloat   = 200
     var numberOfPulses: Float = 10
     
-    
     override init(layer: Any) {
         super.init(layer: layer)
     }
@@ -33,7 +32,6 @@ class PulseAnimation: CALayer {
         self.radius = radius
         self.numberOfPulses = numberOfPulses
         self.position = position
-        
         
         self.bounds = CGRect(x: 0, y: 0, width: radius*2, height: radius*2)
         self.cornerRadius = radius

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     var counterTouch = 0
     var counterNot = 0
+    var finalAnswer: String = ""
     
     var notTwinkleLittleStar: [Int] = [
         0,0,4,4,5,5,4,
@@ -122,8 +123,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         setBeginingShapeState()
         startGameAnimation()
+        
     }
     
     func toneContainersAnimation(_ randomCircle: Int, _ randomScale2: Int, _ randomColor2: Int, _ randomRadius2: Int) {
@@ -216,12 +221,35 @@ class ViewController: UIViewController {
         }else if counterNot > 41{
             counterNot = 0
             counterTouch = 0
+            let alert = UIAlertController(title: "Guess \u{1F3BC}", message: nil, preferredStyle: .alert)
+            
+            alert.addTextField(configurationHandler: { textField in
+                
+            })
+            
+            alert.addAction(UIAlertAction(title: "\u{1F399}", style: .default, handler: { action in
+                
+                if let answer = alert.textFields?.first?.text {
+                    self.finalAnswer = answer.lowercased()
+                    print("The Answer: \(self.finalAnswer)")
+                    
+                    if self.finalAnswer == "little star" {
+                        self.view.backgroundColor = .green
+                    }else {
+                        self.view.backgroundColor = .red
+                    }
+                }
+                
+            }))
+            
+            self.present(alert, animated: true)
         }
         
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        
+        
         print(self.counterTouch)
         print(self.counterNot)
         let generator = UIImpactFeedbackGenerator(style: .heavy)
