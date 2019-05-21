@@ -8,12 +8,33 @@
 
 import UIKit
 import AVFoundation
+import AudioToolbox
 
 class ViewController: UIViewController {
     
     var player: AVAudioPlayer?
     
     var counterTouch = 0
+    var counterNot = 0
+    
+    var notTwinkleLittleStar: [Int] = [
+        0,0,4,4,5,5,4,
+        3,3,2,2,1,1,0,
+        4,4,3,3,2,2,1,
+        4,4,3,3,2,2,1,
+        0,0,4,4,5,5,4,
+        3,3,2,2,1,1,0
+    ]
+    
+    var toneNotasiAngka: [String] = [
+        "do",
+        "re",
+        "mi",
+        "fa",
+        "sol",
+        "la",
+        "si"
+    ]
     
     var toneBackGroundColor: [CGColor] = [
         #colorLiteral(red: 0.003921568627, green: 0.7450980392, blue: 0.9960784314, alpha: 1),
@@ -162,31 +183,45 @@ class ViewController: UIViewController {
     }
     
     func playSound() {
-        var randomTapToneSoundNumber: Int = Int.random(in: 0...25)
+//        var randomTapToneSoundNumber: Int = Int.random(in: 0...25)
+//        print(notTwinkleLittleStar.count)
         
-        guard let url = Bundle.main.url(forResource: tapToneSounds[randomTapToneSoundNumber], withExtension: "mp3", subdirectory: "B") else { return }
-        
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
-            
-            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
-            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
-            
-            /* iOS 10 and earlier require the following line:
-             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
-            
-            guard let player = player else { return }
-            
-            player.play()
+        if counterNot < 42 {
             
             
-        } catch let error {
-            print(error.localizedDescription)
+            
+            guard let url = Bundle.main.url(forResource: toneNotasiAngka[notTwinkleLittleStar[counterNot]], withExtension: "wav", subdirectory: "ToneSound") else { return }
+            
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                try AVAudioSession.sharedInstance().setActive(true)
+                
+                /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+                player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+                
+                /* iOS 10 and earlier require the following line:
+                 player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+                
+                guard let player = player else { return }
+                
+                player.play()
+                
+                
+            } catch let error {
+                print(error.localizedDescription)
+            }
+            
+            counterNot+=1
+        }else{
+            counterNot = 0
         }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         playSound()
         counterTouch += 1
         let randomScale1 = Int.random(in: 1...5)
