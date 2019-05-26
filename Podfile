@@ -7,5 +7,6 @@ target 'HapiTap' do
 
   # Pods for HapiTap
     pod 'lottie-ios'
+    pod 'SCLAlertView'
 
 end

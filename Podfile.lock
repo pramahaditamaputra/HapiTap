@@ -1,16 +1,20 @@
 PODS:
   - lottie-ios (3.0.4)
+  - SCLAlertView (0.8)
 
 DEPENDENCIES:
   - lottie-ios
+  - SCLAlertView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - lottie-ios
+    - SCLAlertView
 
 SPEC CHECKSUMS:
   lottie-ios: 55a2de40418f8de2b155efaba4d4d1a025a5c570
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
 
-PODFILE CHECKSUM: b80470782f317d694dadd39e32c326439be7190a
+PODFILE CHECKSUM: 8b447a08d93c696e77093cb4bf3b535b51bde8dd
 
 COCOAPODS: 1.6.1

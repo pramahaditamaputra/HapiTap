@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 import Lottie
+import SCLAlertView
 
 class ViewController: UIViewController {
     
@@ -89,19 +90,49 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainToneContainers: UIView!
     @IBOutlet var toneContainers: [UIView]!
     @IBOutlet weak var startContainer: AnimationView!
+    @IBOutlet weak var resultContainer: AnimationView!
     
     override var prefersStatusBarHidden: Bool{
         return true
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        startContainer.transform = CGAffineTransform(scaleX: 5, y: 5)
+        resultContainer.transform = CGAffineTransform(scaleX: 5, y: 5)
+        setBeginingShapeState()
+        startGameAnimation()
+        
+    }
+    
     func startGameAnimation() {
         
-        let startAnimation = Animation.named("tapHere")
-        startContainer.animation = startAnimation
-        startContainer.loopMode = .loop
-        startContainer.transform = CGAffineTransform(scaleX: 5, y: 5)
-        startContainer.backgroundColor = .none
-        startContainer.play()
+        UIView.animateKeyframes(withDuration: 10.0, delay: 0, options: [.calculationModeCubic], animations: {
+            // Add animations
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 2.0/10.0,animations: {
+                let startAnimation = Animation.named("tapHere")
+                self.startContainer.animation = startAnimation
+                self.startContainer.loopMode = .loop
+                self.startContainer.play()
+                self.startContainer.frame = CGRect(x: 20, y: 44, width: 250, height: 250)
+            })
+            UIView.addKeyframe(withRelativeStartTime: 2.0/10.0, relativeDuration: 2.0/10.0, animations: {
+                self.startContainer.frame = CGRect(x: 144, y: 612, width: 250, height: 250)
+                
+            })
+            UIView.addKeyframe(withRelativeStartTime: 4.0/10.0, relativeDuration: 2.0/10.0, animations: {
+                self.startContainer.frame = CGRect(x: 144, y: 44, width: 250, height: 250)
+            })
+            UIView.addKeyframe(withRelativeStartTime: 6.0/10.0, relativeDuration: 2.0/10.0, animations: {
+                self.startContainer.frame = CGRect(x: 20, y: 612, width: 250, height: 250)
+            })
+            UIView.addKeyframe(withRelativeStartTime: 8.0/10.0, relativeDuration: 2.0/10.0, animations: {
+                self.startContainer.frame = CGRect(x: 82, y: 323, width: 250, height: 250)
+            })
+        }, completion:{ _ in
+            print("I'm done!")
+        })
+        
     }
     
     func setBeginingShapeState() {
@@ -112,16 +143,6 @@ class ViewController: UIViewController {
             toneContainer.layer.opacity = 0
             toneContainer.layer.cornerRadius = toneContainer.frame.width/2
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        
-        setBeginingShapeState()
-        startGameAnimation()
-        
     }
     
     func toneContainersAnimation(_ randomCircle: Int, _ randomScale2: Int, _ randomColor2: Int, _ randomRadius2: Int) {
@@ -162,6 +183,8 @@ class ViewController: UIViewController {
             }
             
             self.startContainer.isHidden = true
+            self.resultContainer.isHidden = true
+            
             self.mainToneContainers.center = CGPoint(x: CGFloat(position.x), y: CGFloat(position.y))
             self.mainToneContainers.transform = CGAffineTransform(scaleX: CGFloat(randomScale1), y: CGFloat(randomScale1))
             self.mainToneContainers.layer.opacity = 1
@@ -204,14 +227,10 @@ class ViewController: UIViewController {
     }
     
     func playSound() {
-//        var randomTapToneSoundNumber: Int = Int.random(in: 0...25)
-//        print(notTwinkleLittleStar.count)
         
         if counterNot <= 41 {
         
             guard let url = Bundle.main.url(forResource: toneNotasiAngka[notTwinkleLittleStar[counterNot]], withExtension: "wav", subdirectory: "ToneSound") else { return }
-        
-//        guard let url = Bundle.main.url(forResource: tapToneSounds[randomTapToneSoundNumber], withExtension: "mp3", subdirectory: "A") else { return }
         
             do {
                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
@@ -237,40 +256,55 @@ class ViewController: UIViewController {
         }else if counterNot > 41{
             counterNot = 0
             counterTouch = 0
-            let alert = UIAlertController(title: "Quiz \u{1F3BC}", message: nil, preferredStyle: .alert)
             
-            alert.addTextField(configurationHandler: { textField in
-                textField.placeholder = "What's Song Name?"
-            })
-            
-            alert.addAction(UIAlertAction(title: "\u{1F399}", style: .default, handler: { action in
+            // Add a text field
+            let appearance = SCLAlertView.SCLAppearance(
+                showCloseButton: false,
+                showCircularIcon: true
                 
-                if let answer = alert.textFields?.first?.text {
-                    self.finalAnswer = answer.lowercased()
-                    print("The Answer: \(self.finalAnswer)")
+            )
+            let alert = SCLAlertView(appearance: appearance)
+            let icon = UIImage(named: "question")
+            
+            let txt = alert.addTextField("Enter Song Name")
+            alert.addButton("Answer") {
+                self.finalAnswer = txt.text!.lowercased()
+                if  self.finalAnswer == "little star" ||
+                    self.finalAnswer == "littlestar" ||
+                    self.finalAnswer == "twinkle little star" ||
+                    self.finalAnswer == "twinklelittlestar" ||
+                    self.finalAnswer == "twinkle" ||
+                    self.finalAnswer == "twinkle twinkle" ||
+                    self.finalAnswer == "twinkletwinkle" ||
+                    self.finalAnswer == "twinkle-twinkle" ||
+                    self.finalAnswer == "twinkle twinkle little star" ||
+                    self.finalAnswer == "twinkletwinkle little star" ||
+                    self.finalAnswer == "twinkletwinkle littlestar" ||
+                    self.finalAnswer == "twinkle twinkle littlestar" ||
+                    self.finalAnswer == "twinkletwinklelittlestar" ||
+                    self.finalAnswer == "twinkle-twinkle little star" ||
+                    self.finalAnswer == "twinkle-twinkle littlestar" ||
+                    self.finalAnswer == "twinkle-twinklelittlestar" {
                     
-                    if self.finalAnswer == "little star" {
                         self.view.backgroundColor = #colorLiteral(red: 0.4509803922, green: 0.9803921569, blue: 0.4745098039, alpha: 1)
                         self.checkAnswerSound(named: "correct")
                         let happyAnimation = Animation.named("happyTogether")
-                        self.startContainer.isHidden = false
-                        self.startContainer.animation = happyAnimation
-                        self.startContainer.loopMode = .loop
-                        self.startContainer.play()
-                    }else {
-                        self.view.backgroundColor = #colorLiteral(red: 1, green: 0.4932718873, blue: 0.4739984274, alpha: 1)
-                        self.checkAnswerSound(named: "incorrect")
-                        let cryAnimation = Animation.named("cry")
-                        self.startContainer.isHidden = false
-                        self.startContainer.animation = cryAnimation
-                        self.startContainer.loopMode = .loop
-                        self.startContainer.play()
-                    }
+                        self.resultContainer.isHidden = false
+                        self.resultContainer.animation = happyAnimation
+                        self.resultContainer.loopMode = .loop
+                        self.resultContainer.play()
+                }else {
+                    self.view.backgroundColor = #colorLiteral(red: 1, green: 0.4932718873, blue: 0.4739984274, alpha: 1)
+                    self.checkAnswerSound(named: "incorrect")
+                    let cryAnimation = Animation.named("cry")
+                    self.resultContainer.isHidden = false
+                    self.resultContainer.animation = cryAnimation
+                    self.resultContainer.loopMode = .loop
+                    self.resultContainer.play()
                 }
-                
-            }))
-            
-            self.present(alert, animated: true)
+            }
+            alert.showEdit("QUIZ", subTitle: "What's Song Name ?", circleIconImage: icon)
+    
         }
         
     }

@@ -147,13 +147,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QRJ-FU-Opt" userLabel="MainTapContainerView">
-                                <rect key="frame" x="157" y="398" width="50" height="50"/>
+                                <rect key="frame" x="182" y="423" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Omx-DV-MaZ" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hd9-g7-TkR" customClass="AnimationView" customModule="Lottie">
                                 <rect key="frame" x="182" y="423" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.56078431370000004" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,6 +164,7 @@
                     </view>
                     <connections>
                         <outlet property="mainToneContainers" destination="QRJ-FU-Opt" id="7NK-8K-Q7f"/>
+                        <outlet property="resultContainer" destination="Hd9-g7-TkR" id="vve-r7-zuY"/>
                         <outlet property="startContainer" destination="Omx-DV-MaZ" id="Shg-O0-d69"/>
                         <outletCollection property="toneContainers" destination="raU-WN-C5q" collectionClass="NSMutableArray" id="Rh2-EA-ASs"/>
                         <outletCollection property="toneContainers" destination="uU2-51-Pfr" collectionClass="NSMutableArray" id="8yW-fq-iXW"/>
