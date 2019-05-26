@@ -158,6 +158,26 @@
                                 <rect key="frame" x="182" y="423" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eC7-Ag-FUP" userLabel="Firework1" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="20" y="192" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYs-kr-l8a" userLabel="Firework2" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="182" y="624" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSD-mN-rqA" userLabel="Firework3" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="20" y="432" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wgo-jT-ffh" userLabel="Firework4" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="344" y="423" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8CS-ug-VbZ" userLabel="Firework5" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="344" y="192" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="P7t-W2-WH9"/>
@@ -198,11 +218,43 @@
                         <outletCollection property="toneContainers" destination="iM5-h3-oNI" collectionClass="NSMutableArray" id="1D0-EQ-NN9"/>
                         <outletCollection property="toneContainers" destination="FxL-gO-Nsq" collectionClass="NSMutableArray" id="uCJ-tF-5nE"/>
                         <outletCollection property="toneContainers" destination="0mM-Si-v6G" collectionClass="NSMutableArray" id="QV4-lw-2no"/>
+                        <outletCollection property="fireworkContainers" destination="eC7-Ag-FUP" collectionClass="NSMutableArray" id="Nkq-9t-5aR"/>
+                        <outletCollection property="fireworkContainers" destination="ZYs-kr-l8a" collectionClass="NSMutableArray" id="hJa-yo-p82"/>
+                        <outletCollection property="fireworkContainers" destination="wSD-mN-rqA" collectionClass="NSMutableArray" id="opi-91-8mc"/>
+                        <outletCollection property="fireworkContainers" destination="Wgo-jT-ffh" collectionClass="NSMutableArray" id="AP1-PO-Ufj"/>
+                        <outletCollection property="fireworkContainers" destination="8CS-ug-VbZ" collectionClass="NSMutableArray" id="uP4-e1-xIN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqT-pD-eap" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QcQ-jH-zi9">
+            <objects>
+                <viewController id="B39-ou-KVN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Npa-c6-8X9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcp-Dv-056">
+                                <rect key="frame" x="182" y="423" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dVC-M3-gY9">
+                                <rect key="frame" x="182" y="624" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hEh-YU-X9f"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tqZ-Vl-m1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="21"/>
         </scene>
     </scenes>
 </document>

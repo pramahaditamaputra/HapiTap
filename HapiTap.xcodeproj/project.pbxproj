@@ -12,6 +12,7 @@
 		C331AF10229AC5B900EBC607 /* cry.json in Resources */ = {isa = PBXBuildFile; fileRef = C331AF0F229AC5B900EBC607 /* cry.json */; };
 		C331AF12229AC72500EBC607 /* happy.json in Resources */ = {isa = PBXBuildFile; fileRef = C331AF11229AC72500EBC607 /* happy.json */; };
 		C331AF14229AC93700EBC607 /* happyTogether.json in Resources */ = {isa = PBXBuildFile; fileRef = C331AF13229AC93700EBC607 /* happyTogether.json */; };
+		C331AF16229AF17E00EBC607 /* firework.json in Resources */ = {isa = PBXBuildFile; fileRef = C331AF15229AF17E00EBC607 /* firework.json */; };
 		C3932429228E5072004874AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3932428228E5072004874AE /* AppDelegate.swift */; };
 		C393242B228E5072004874AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C393242A228E5072004874AE /* ViewController.swift */; };
 		C393242E228E5072004874AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C393242C228E5072004874AE /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		C331AF0F229AC5B900EBC607 /* cry.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cry.json; path = ../../../Downloads/cry.json; sourceTree = "<group>"; };
 		C331AF11229AC72500EBC607 /* happy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = happy.json; path = ../../../Downloads/happy.json; sourceTree = "<group>"; };
 		C331AF13229AC93700EBC607 /* happyTogether.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = happyTogether.json; path = ../../../Downloads/happyTogether.json; sourceTree = "<group>"; };
+		C331AF15229AF17E00EBC607 /* firework.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = firework.json; path = ../../../Downloads/firework.json; sourceTree = "<group>"; };
 		C3932425228E5072004874AE /* HapiTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HapiTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3932428228E5072004874AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C393242A228E5072004874AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				C393242A228E5072004874AE /* ViewController.swift */,
 				C393242C228E5072004874AE /* Main.storyboard */,
 				C393242F228E5072004874AE /* Assets.xcassets */,
+				C331AF15229AF17E00EBC607 /* firework.json */,
 				C331AF0F229AC5B900EBC607 /* cry.json */,
 				C331AF11229AC72500EBC607 /* happy.json */,
 				C331AF13229AC93700EBC607 /* happyTogether.json */,
@@ -180,6 +183,7 @@
 			files = (
 				C3061C19228F627A0021E187 /* TapToneSound in Resources */,
 				C3A338022292D90F002173E9 /* B in Resources */,
+				C331AF16229AF17E00EBC607 /* firework.json in Resources */,
 				C331AF14229AC93700EBC607 /* happyTogether.json in Resources */,
 				C393243D228E51F6004874AE /* ToneColor in Resources */,
 				C3A338042293B576002173E9 /* A in Resources */,

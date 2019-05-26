@@ -91,6 +91,7 @@ class ViewController: UIViewController {
     @IBOutlet var toneContainers: [UIView]!
     @IBOutlet weak var startContainer: AnimationView!
     @IBOutlet weak var resultContainer: AnimationView!
+    @IBOutlet var fireworkContainers: [AnimationView]!
     
     override var prefersStatusBarHidden: Bool{
         return true
@@ -100,12 +101,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 //        startContainer.transform = CGAffineTransform(scaleX: 5, y: 5)
         resultContainer.transform = CGAffineTransform(scaleX: 5, y: 5)
+        for fireworkContainer in fireworkContainers {
+            fireworkContainer.transform = CGAffineTransform(scaleX: 5, y: 5)
+        }
         setBeginingShapeState()
         startGameAnimation()
         
     }
     
     func startGameAnimation() {
+        
+        self.view.isUserInteractionEnabled = false
         
         UIView.animateKeyframes(withDuration: 10.0, delay: 0, options: [.calculationModeCubic], animations: {
             // Add animations
@@ -130,6 +136,7 @@ class ViewController: UIViewController {
                 self.startContainer.frame = CGRect(x: 82, y: 323, width: 250, height: 250)
             })
         }, completion:{ _ in
+            self.view.isUserInteractionEnabled = true
             print("I'm done!")
         })
         
@@ -203,6 +210,9 @@ class ViewController: UIViewController {
     }
     
     func checkAnswerSound(named:String){
+        
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
         
         guard let url = Bundle.main.url(forResource: named, withExtension: "wav", subdirectory: "ToneSound") else { return }
         
@@ -286,6 +296,7 @@ class ViewController: UIViewController {
                     self.finalAnswer == "twinkle-twinkle littlestar" ||
                     self.finalAnswer == "twinkle-twinklelittlestar" {
                     
+//                        self.view.isUserInteractionEnabled = false
                         self.view.backgroundColor = #colorLiteral(red: 0.4509803922, green: 0.9803921569, blue: 0.4745098039, alpha: 1)
                         self.checkAnswerSound(named: "correct")
                         let happyAnimation = Animation.named("happyTogether")
@@ -293,6 +304,8 @@ class ViewController: UIViewController {
                         self.resultContainer.animation = happyAnimation
                         self.resultContainer.loopMode = .loop
                         self.resultContainer.play()
+                    
+                    
                 }else {
                     self.view.backgroundColor = #colorLiteral(red: 1, green: 0.4932718873, blue: 0.4739984274, alpha: 1)
                     self.checkAnswerSound(named: "incorrect")
