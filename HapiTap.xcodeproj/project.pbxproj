@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1CC22DAA90A25B791EFC638F /* Pods_HapiTap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6199DB47A05A8B877F095136 /* Pods_HapiTap.framework */; };
 		C3061C19228F627A0021E187 /* TapToneSound in Resources */ = {isa = PBXBuildFile; fileRef = C3061C18228F627A0021E187 /* TapToneSound */; };
+		C331AF10229AC5B900EBC607 /* cry.json in Resources */ = {isa = PBXBuildFile; fileRef = C331AF0F229AC5B900EBC607 /* cry.json */; };
+		C331AF12229AC72500EBC607 /* happy.json in Resources */ = {isa = PBXBuildFile; fileRef = C331AF11229AC72500EBC607 /* happy.json */; };
+		C331AF14229AC93700EBC607 /* happyTogether.json in Resources */ = {isa = PBXBuildFile; fileRef = C331AF13229AC93700EBC607 /* happyTogether.json */; };
 		C3932429228E5072004874AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3932428228E5072004874AE /* AppDelegate.swift */; };
 		C393242B228E5072004874AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C393242A228E5072004874AE /* ViewController.swift */; };
 		C393242E228E5072004874AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C393242C228E5072004874AE /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 		35E2F6EAC94AA210A76DF859 /* Pods-HapiTap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HapiTap.release.xcconfig"; path = "Target Support Files/Pods-HapiTap/Pods-HapiTap.release.xcconfig"; sourceTree = "<group>"; };
 		6199DB47A05A8B877F095136 /* Pods_HapiTap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HapiTap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3061C18228F627A0021E187 /* TapToneSound */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TapToneSound; path = ../../../Downloads/TapToneSound; sourceTree = "<group>"; };
+		C331AF0F229AC5B900EBC607 /* cry.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cry.json; path = ../../../Downloads/cry.json; sourceTree = "<group>"; };
+		C331AF11229AC72500EBC607 /* happy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = happy.json; path = ../../../Downloads/happy.json; sourceTree = "<group>"; };
+		C331AF13229AC93700EBC607 /* happyTogether.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = happyTogether.json; path = ../../../Downloads/happyTogether.json; sourceTree = "<group>"; };
 		C3932425228E5072004874AE /* HapiTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HapiTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3932428228E5072004874AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C393242A228E5072004874AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +98,9 @@
 				C393242A228E5072004874AE /* ViewController.swift */,
 				C393242C228E5072004874AE /* Main.storyboard */,
 				C393242F228E5072004874AE /* Assets.xcassets */,
+				C331AF0F229AC5B900EBC607 /* cry.json */,
+				C331AF11229AC72500EBC607 /* happy.json */,
+				C331AF13229AC93700EBC607 /* happyTogether.json */,
 				C393243E228E53B7004874AE /* tapHere.json */,
 				C3932431228E5072004874AE /* LaunchScreen.storyboard */,
 				C3932434228E5072004874AE /* Info.plist */,
@@ -171,12 +180,15 @@
 			files = (
 				C3061C19228F627A0021E187 /* TapToneSound in Resources */,
 				C3A338022292D90F002173E9 /* B in Resources */,
+				C331AF14229AC93700EBC607 /* happyTogether.json in Resources */,
 				C393243D228E51F6004874AE /* ToneColor in Resources */,
 				C3A338042293B576002173E9 /* A in Resources */,
 				C393243F228E53B7004874AE /* tapHere.json in Resources */,
 				C393243B228E51EE004874AE /* ToneSound in Resources */,
 				C3932433228E5072004874AE /* LaunchScreen.storyboard in Resources */,
 				C3932430228E5072004874AE /* Assets.xcassets in Resources */,
+				C331AF10229AC5B900EBC607 /* cry.json in Resources */,
+				C331AF12229AC72500EBC607 /* happy.json in Resources */,
 				C393242E228E5072004874AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -146,18 +146,11 @@
                                 <rect key="frame" x="307" y="744" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TAP &amp; AVOID THE CIRCLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KL-uf-wDa">
-                                <rect key="frame" x="101" y="469" width="213" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QRJ-FU-Opt" userLabel="MainTapContainerView">
                                 <rect key="frame" x="157" y="398" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Omx-DV-MaZ">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Omx-DV-MaZ" customClass="AnimationView" customModule="Lottie">
                                 <rect key="frame" x="182" y="423" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.56078431370000004" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -169,7 +162,6 @@
                     <connections>
                         <outlet property="mainToneContainers" destination="QRJ-FU-Opt" id="7NK-8K-Q7f"/>
                         <outlet property="startContainer" destination="Omx-DV-MaZ" id="Shg-O0-d69"/>
-                        <outlet property="startTapLabel" destination="0KL-uf-wDa" id="qtk-gm-8An"/>
                         <outletCollection property="toneContainers" destination="raU-WN-C5q" collectionClass="NSMutableArray" id="Rh2-EA-ASs"/>
                         <outletCollection property="toneContainers" destination="uU2-51-Pfr" collectionClass="NSMutableArray" id="8yW-fq-iXW"/>
                         <outletCollection property="toneContainers" destination="m3C-8t-QWw" collectionClass="NSMutableArray" id="Bb1-79-0Gy"/>

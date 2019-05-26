@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import AudioToolbox
+import Lottie
 
 class ViewController: UIViewController {
     
@@ -87,34 +88,26 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mainToneContainers: UIView!
     @IBOutlet var toneContainers: [UIView]!
-    @IBOutlet weak var startContainer: UIView!
-    @IBOutlet weak var startTapLabel: UILabel!
+    @IBOutlet weak var startContainer: AnimationView!
     
     override var prefersStatusBarHidden: Bool{
         return true
     }
     
     func startGameAnimation() {
-        let randomColor1 = Int.random(in: 0...4)
-        UIView.animate(withDuration: 0.5, delay: 0, animations: {
-            self.startContainer.transform = CGAffineTransform(scaleX: CGFloat(1), y: CGFloat(1))
-        }) { (_) in
-            UIView.animate(withDuration: 0.5, delay: 0.5, animations: {
-                self.startContainer.layer.backgroundColor = self.toneBackGroundColor[randomColor1]
-                let positionView = self.startContainer.center
-                let pulse = PulseAnimation(numberOfPulses: 5, radius: CGFloat(100), position: positionView)
-                pulse.backgroundColor = self.toneBackGroundColor[randomColor1]
-                pulse.animationDuration = 0.2
-                self.view.layer.insertSublayer(pulse, below: self.startContainer.layer)
-            })
-        }
+        
+        let startAnimation = Animation.named("tapHere")
+        startContainer.animation = startAnimation
+        startContainer.loopMode = .loop
+        startContainer.transform = CGAffineTransform(scaleX: 5, y: 5)
+        startContainer.backgroundColor = .none
+        startContainer.play()
     }
     
     func setBeginingShapeState() {
         // Do any additional setup after loading the view.
         mainToneContainers.layer.opacity = 0
         mainToneContainers.layer.cornerRadius = mainToneContainers.frame.width/2
-        startContainer.layer.cornerRadius = startContainer.frame.width/2
         for toneContainer in toneContainers {
             toneContainer.layer.opacity = 0
             toneContainer.layer.cornerRadius = toneContainer.frame.width/2
@@ -169,7 +162,6 @@ class ViewController: UIViewController {
             }
             
             self.startContainer.isHidden = true
-            self.startTapLabel.isHidden = true
             self.mainToneContainers.center = CGPoint(x: CGFloat(position.x), y: CGFloat(position.y))
             self.mainToneContainers.transform = CGAffineTransform(scaleX: CGFloat(randomScale1), y: CGFloat(randomScale1))
             self.mainToneContainers.layer.opacity = 1
@@ -184,6 +176,30 @@ class ViewController: UIViewController {
                 self.mainToneContainers.transform = .identity
                 self.mainToneContainers.layer.opacity = 0
             })
+        }
+    }
+    
+    func checkAnswerSound(named:String){
+        
+        guard let url = Bundle.main.url(forResource: named, withExtension: "wav", subdirectory: "ToneSound") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            
+            /* iOS 10 and earlier require the following line:
+             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+            
+            guard let player = player else { return }
+            
+            player.play()
+            
+            
+        } catch let error {
+            print(error.localizedDescription)
         }
     }
     
@@ -221,10 +237,10 @@ class ViewController: UIViewController {
         }else if counterNot > 41{
             counterNot = 0
             counterTouch = 0
-            let alert = UIAlertController(title: "Guess \u{1F3BC}", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Quiz \u{1F3BC}", message: nil, preferredStyle: .alert)
             
             alert.addTextField(configurationHandler: { textField in
-                
+                textField.placeholder = "What's Song Name?"
             })
             
             alert.addAction(UIAlertAction(title: "\u{1F399}", style: .default, handler: { action in
@@ -234,9 +250,21 @@ class ViewController: UIViewController {
                     print("The Answer: \(self.finalAnswer)")
                     
                     if self.finalAnswer == "little star" {
-                        self.view.backgroundColor = .green
+                        self.view.backgroundColor = #colorLiteral(red: 0.4509803922, green: 0.9803921569, blue: 0.4745098039, alpha: 1)
+                        self.checkAnswerSound(named: "correct")
+                        let happyAnimation = Animation.named("happyTogether")
+                        self.startContainer.isHidden = false
+                        self.startContainer.animation = happyAnimation
+                        self.startContainer.loopMode = .loop
+                        self.startContainer.play()
                     }else {
-                        self.view.backgroundColor = .red
+                        self.view.backgroundColor = #colorLiteral(red: 1, green: 0.4932718873, blue: 0.4739984274, alpha: 1)
+                        self.checkAnswerSound(named: "incorrect")
+                        let cryAnimation = Animation.named("cry")
+                        self.startContainer.isHidden = false
+                        self.startContainer.animation = cryAnimation
+                        self.startContainer.loopMode = .loop
+                        self.startContainer.play()
                     }
                 }
                 
@@ -255,10 +283,10 @@ class ViewController: UIViewController {
         let generator = UIImpactFeedbackGenerator(style: .heavy)
         generator.impactOccurred()
         playSound()
-        let randomScale1 = Int.random(in: 1...5)
-        let randomRadius1 = Int.random(in: 250...300)
+        let randomScale1 = Int.random(in: 1...4)
+        let randomRadius1 = Int.random(in: 150...200)
         let randomScale2 = Int.random(in: 1...2)
-        let randomRadius2 = Int.random(in: 150...200)
+        let randomRadius2 = Int.random(in: 100...150)
         let randomColor1 = Int.random(in: 0...4)
         let randomColor2 = Int.random(in: 0...4)
         let randomCircle = Int.random(in: 0...31)
